@@ -1,0 +1,5 @@
+<!-- res/drawable/circle_shape.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@android:color/white"/> <!-- Fondo blanco o el color que prefieras -->
+    <corners android:radius="500dp"/> <!-- Radio suficiente para hacer un círculo (la mitad del tamaño del ImageView) -->
+</shape>

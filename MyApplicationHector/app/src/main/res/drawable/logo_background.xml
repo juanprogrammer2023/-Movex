@@ -1,0 +1,5 @@
+<!-- logo_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <corners android:radius="16dp"/> <!-- Bordes redondeados -->
+    <padding android:left="8dp" android:top="8dp" android:right="8dp" android:bottom="8dp"/> <!-- Margen interno opcional -->
+</shape>

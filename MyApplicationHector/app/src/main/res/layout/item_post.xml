@@ -1,0 +1,186 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border"
+    android:layout_marginBottom="4dp"
+    android:padding="16dp">
+
+    <ImageButton
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/mdi__close_box"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="BotonDelete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- ImageView para la foto de perfil -->
+    <ImageView
+        android:id="@+id/profileImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/user1"
+        android:padding="7dp"
+        android:contentDescription="Foto de perfil"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:scaleType="centerCrop"
+        android:background="@drawable/circle_background" />
+
+    <!-- TextView para el título del post -->
+    <TextView
+        android:id="@+id/tituloTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Título del Post"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btnDelete" />
+
+    <!-- TextView para el contenido del post -->
+    <TextView
+        android:id="@+id/contenidoTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Contenido del post"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/tituloTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView para el nombre y apellido del usuario -->
+    <TextView
+        android:id="@+id/nombreUsuarioTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Nombre del Usuario"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/contenidoTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- TextView para la fecha de publicación -->
+    <TextView
+        android:id="@+id/fechaPublicacionTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Fecha de Publicación"
+        android:textSize="12sp"
+        android:textColor="#888888"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/nombreUsuarioTextView"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Contenedor para los labels centrados -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/labelsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/fechaPublicacionTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="8dp">
+
+        <androidx.constraintlayout.helper.widget.Flow
+            android:id="@+id/flowLabels"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:flow_wrapMode="chain"
+            app:flow_horizontalGap="8dp"
+            app:flow_verticalGap="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Spinner para seleccionar etiquetas -->
+    <Spinner
+        android:id="@+id/spinnerEtiquetas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/profileImageView"
+        app:layout_constraintTop_toBottomOf="@id/labelsContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <!-- Botón para agregar la etiqueta seleccionada -->
+    <Button
+        android:id="@+id/btnAddEtiqueta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerEtiquetas" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/commentsRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/btnAddEtiqueta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="3dp"
+        tools:listitem="@layout/item_comment" />
+
+    <!-- Contenedor para el campo de comentario y botón de envío -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/commentsRecyclerView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- TextInputLayout para estilizar el campo de comentario -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/commentInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:hint="Escribe un comentario...">
+
+            <!-- TextInputEditText para el texto del comentario -->
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etComment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="48dp"
+                android:maxLines="3"
+                android:background="@null"
+                android:textColor="@android:color/black" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Botón de envío dentro del campo de texto -->
+        <ImageButton
+            android:id="@+id/btnSendComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/iconamoon__send_fill"
+            android:background="@null"
+            android:contentDescription="Enviar comentario"
+            android:padding="8dp"
+            app:layout_constraintEnd_toEndOf="@id/commentInputLayout"
+            app:layout_constraintBottom_toBottomOf="@id/commentInputLayout"
+            app:layout_constraintTop_toTopOf="@id/commentInputLayout"
+            android:layout_marginEnd="8dp"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

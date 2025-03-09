@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <!-- Permitir tráfico claro (HTTP) para todas las conexiones sin importar la dirección -->
+    <base-config cleartextTrafficPermitted="true" />
+
+    <!-- Configuración específica para dominios locales (opcional) -->
+    <domain-config cleartextTrafficPermitted="true">
+        <!-- Permitir tráfico claro (HTTP) para localhost -->
+        <domain includeSubdomains="true">localhost</domain>
+
+        <!-- Permitir tráfico claro (HTTP) para el emulador de Android (10.0.2.2) -->
+        <domain includeSubdomains="true">10.0.2.2</domain>
+
+        <!-- Permitir tráfico claro (HTTP) para direcciones IP específicas en la red local -->
+        <domain includeSubdomains="true">192.168.79.31</domain>
+        <domain includeSubdomains="true">192.168.1.8</domain>
+        <domain includeSubdomains="true">192.168.43.31</domain>
+        <domain includeSubdomains="true">172.19.38.197</domain>
+        <domain includeSubdomains="true">192.168.235.31</domain>
+    </domain-config>
+</network-security-config>

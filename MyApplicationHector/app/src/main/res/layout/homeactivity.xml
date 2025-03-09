@@ -1,0 +1,109 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- Custom Action Bar -->
+    <com.example.myapplicationhector.CustomActionBar
+        android:id="@+id/customActionBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Título Principal -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MoveX"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Subtítulo -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Comencemos con una publicacion"
+        android:gravity="center"
+        android:textColor="@color/button_gray" />
+
+    <!-- Layout para subir post e iconos de usuarios -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingHorizontal="30dp"
+        android:orientation="horizontal">
+
+        <!-- Botón Subir Post -->
+        <ImageView
+            android:id="@+id/SubirPost"
+            android:layout_width="41dp"
+            android:layout_height="38dp"
+            android:contentDescription="Subir Post"
+            app:srcCompat="@drawable/gridicons__add" />
+
+        <!-- Lista de imágenes de usuarios (centrada) -->
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+                <!-- User avatar ImageViews -->
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/user45"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FFFFFF"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/img"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FFFFFF"/>
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="38dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="8dp"
+                    android:src="@drawable/yiro"
+                    app:civ_border_width="0dp"
+                    app:civ_border_color="#FFFFFF"/>
+                <!-- +1 TextView -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+1"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/darker_gray"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"/>
+            </LinearLayout>
+        </HorizontalScrollView>
+    </LinearLayout>
+
+    <!-- RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="10dp" />
+
+    <!-- Custom Bottom Navigation -->
+    <com.example.myapplicationhector.CustomBottomNavigation
+        android:id="@+id/customBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
+

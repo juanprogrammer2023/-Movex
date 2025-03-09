@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="30dp"
+    android:orientation="horizontal">
+
+    <!-- Botón de imagen en el lado izquierdo -->
+    <ImageButton
+        android:id="@+id/leftImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@android:color/transparent"
+        android:contentDescription="Search Icon"
+        android:src="@drawable/materialsymbolssearch" />
+
+    <!-- Espacio para alinear las imágenes a los extremos -->
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Botón de imagen en el lado derecho -->
+    <ImageButton
+        android:id="@+id/rightImageButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/rounded_background"
+        android:contentDescription="List Icon"
+        android:src="@drawable/material_symbols__list" />
+
+</LinearLayout>
