@@ -7,7 +7,7 @@ Movex es una aplicación diseñada para la creación y gestión de publicaciones
 
 🚀 Tecnologías Utilizadas
 🎨 Frontend
-Desarrollado con Android Studio utilizando Java/Kotlin (según corresponda).
+Desarrollado con Android Studio utilizando Java.
 Diseño de interfaz intuitivo y responsivo para una mejor experiencia de usuario.
 Implementación de Jetpack Components para mejorar la arquitectura de la app.
 
