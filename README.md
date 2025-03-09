@@ -2,21 +2,26 @@
 
 Movex es una aplicación diseñada para la creación y gestión de publicaciones, permitiendo la interacción entre diferentes usuarios a través de comentarios y reacciones. Su objetivo es proporcionar un espacio dinámico donde las personas puedan compartir ideas, experiencias y contenido de manera sencilla y atractiva.
 
-📱 Movex - Plataforma de Publicaciones Interactivas
+📱 Movex -
+
+Plataforma de Publicaciones Interactivas
 Movex es una aplicación diseñada para la creación y gestión de publicaciones, permitiendo la interacción entre diferentes usuarios a través de comentarios y reacciones. Su objetivo es proporcionar un espacio dinámico donde las personas puedan compartir ideas, experiencias y contenido de manera sencilla y atractiva.
 
 🚀 Tecnologías Utilizadas
 🎨 Frontend
+
 Desarrollado con Android Studio utilizando Java.
 Diseño de interfaz intuitivo y responsivo para una mejor experiencia de usuario.
 Implementación de Jetpack Components para mejorar la arquitectura de la app.
 
 🛠️ Backend
+
 Construido con Node.js y Express.js, proporcionando una API REST eficiente.
 Manejo de autenticación y seguridad con JWT para sesiones de usuario seguras.
 Validación de datos con Express Validator y manejo de errores estructurado.
 
 🗄️ Base de Datos
+
 Base de datos relacional gestionada con MySQL, utilizando Workbench para modelado y administración.
 Optimización de consultas con Sequelize ORM (si usaste un ORM).
 Gestión de relaciones entre usuarios, publicaciones y reacciones.
